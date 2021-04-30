@@ -5,9 +5,14 @@ import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
-// TODO: Implement sell player, with modal
+import { fmtPrice } from "../contract/gameFunctions";
 
-const MarketCard = ({ playerId }) => {
+// TODO: Implement buy player, with modal
+
+const MarketCard = ({ playerId, rate, level, price }) => {
+
+    const priceFormatted = fmtPrice(price);
+
     return (
         <Col sm={6} lg={3}>
             <Card>
@@ -20,10 +25,10 @@ const MarketCard = ({ playerId }) => {
                         Player #{playerId}
                     </h5>
                     <hr />
-                    <h6 className="mb-1">Power: </h6>
-                    <h6 className="mb-1">Level: </h6>
+                    <h6 className="mb-1">Rate: {rate}</h6>
+                    <h6 className="mb-1">Level: {level}</h6>
                     <br />
-                    <h3>AVAX</h3>
+                    <h3>{priceFormatted.toString()} AVAX</h3>
                 </Card.Body>
                 <Card.Footer className="bg-white">
                     <div className="bg-transparent ts-border-none">

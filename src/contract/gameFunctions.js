@@ -22,9 +22,9 @@ export const getPlayers = async (owner) => {
 
 export const sellPlayer = async (playerId, price) => {
     try {
-        console.log(await web3.eth.getAccounts()[0]);
+        const accounts = await web3.eth.getAccounts();
         const priceAtomic = web3.utils.toWei(`${price}`, "ether");
-        await Marketplace.methods.listPlayer(playerId, priceAtomic).call();
+        await Marketplace.methods.listPlayer(playerId, priceAtomic).send({ from: accounts[0] });
         return true;
     } catch (err) {
         console.log(err);
@@ -48,5 +48,57 @@ export const cancelListing = async (playerId) => {
     } catch (err) {
         console.log(err);
         return false;
+    }
+}
+
+export const buyPack = async () => {
+    try {
+        const accounts = await web3.eth.getAccounts();
+        await NftCoach.methods.getStarterPack().send({
+            from: accounts[0],
+            value: web3.utils.toWei("1", "ether"),
+        });
+        return true;
+    } catch (err) {
+        console.error(err.message);
+        return false;
+    }
+}
+
+export const buyPlayer = async (box) => {
+    try {
+        const accounts = await web3.eth.getAccounts();
+        await NftCoach.methods.createPlayer(box).send({
+            from: accounts[0],
+            value: web3.utils.toWei(`${1 * box}`, "ether")
+        });
+        return true;
+    } catch (err) {
+        console.error(err.message);
+        return false;
+    }
+}
+
+export const getPlayerDetails = async (playerId) => {
+    try {
+        const player = await NftCoach.methods.playerIdToPlayer(playerId).call();
+        return player;
+    } catch (err) {
+        console.error(err.message);
+        return ({})
+    }
+}
+
+export const fmtPrice = (price) => {
+    return web3.utils.fromWei(price, "ether");
+}
+
+export const getAllTeams = async () => {
+    try {
+        const teams = await NftCoach.methods.getAllTeams().call();
+        return teams;
+    } catch (err) {
+        console.error(err.message);
+        return [];
     }
 }

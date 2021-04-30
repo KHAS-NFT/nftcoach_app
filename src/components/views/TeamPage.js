@@ -3,7 +3,8 @@ import React, { useEffect, useContext } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import PriceCard from "../PriceCard";
+import PriceCardStarter from "../PriceCardStarter";
+
 
 import { GameContext } from "../../context/GameContext";
 
@@ -30,13 +31,15 @@ const Home = () => {
         );
     }
 
+    // TODO: Get Starter Pack sometimes doesn't appear
+
     console.log(teamId);
 
     return teamId === "" ? (
         <Container>
             <Row className="no-gutters ts-cards-same-height mt-5">
                 <Col className="offset-sm-4" sm={4} lg={4}>
-                    <PriceCard
+                    <PriceCardStarter
                         price="1 AVAX"
                         title="Starter Pack"
                         subtitle="Pre-launch price for 5 standard players"

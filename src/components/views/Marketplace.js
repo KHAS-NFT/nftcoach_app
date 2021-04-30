@@ -6,18 +6,25 @@ import MarketCard from "../MarketCard";
 
 import { GameContext } from "../../context/GameContext";
 
+import { getListings, getPlayerDetails, fmtPrice } from "../../contract/gameFunctions";
+
 const Marketplace = () => {
 
     const [account, , ,] = useContext(GameContext);
     const [players, setPlayers] = useState([]);
+    const [playerDetails, setPlayerDetails] = useState([]);
 
     useEffect(() => {
-        async function getListings() {
-            const listings = ["1238", "2223", "6464"];
-            // getListings
+        async function getListingsCtc() {
+            const listings = await getListings();
             setPlayers(listings);
+
+            for (var listing of listings) {
+                const details = await getPlayerDetails(listing);
+                setPlayerDetails(prevState => [...prevState, details]);
+            }
         }
-        getListings();
+        getListingsCtc();
     }, []);
 
     if (account === "") {
@@ -35,8 +42,13 @@ const Marketplace = () => {
                 <h2>Players for Sale</h2>
             </div>
             <Row>
-                {players.map(playerId =>
-                    <MarketCard playerId={playerId} />)}
+                {playerDetails.map(playerDetail => {
+                    return <MarketCard
+                        playerId={playerDetail.playerId}
+                        price={playerDetail.price}
+                        rate={playerDetail.rate}
+                        level={playerDetail.level} />;
+                })}
             </Row>
         </Container>
     );

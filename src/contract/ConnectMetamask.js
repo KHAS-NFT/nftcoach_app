@@ -11,8 +11,8 @@ const ConnectMetamask = () => {
         await connectWallet();
 
         const accounts = await web3.eth.getAccounts();
-        setAccount(accounts[0]);
         console.log(accounts[0]);
+        setAccount(accounts[0]);
     }
 
     return account !== ""

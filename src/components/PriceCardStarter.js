@@ -3,9 +3,9 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
-import { buyPlayer } from "../contract/gameFunctions";
+import { buyPack } from "../contract/gameFunctions";
 
-const PriceCard = ({ title, subtitle, boxType, price, chances, isPromoted }) => {
+const PriceCard = ({ title, subtitle, price, chances, isPromoted }) => {
 
     const primColor = isPromoted ? "#346de0" : "#f46a20";
 
@@ -43,9 +43,9 @@ const PriceCard = ({ title, subtitle, boxType, price, chances, isPromoted }) => 
 
             <Card.Footer className="bg-transparent ts-border-none">
                 <Button
-                    onClick={() => buyPlayer(boxType)}
+                    onClick={buyPack}
                     variant="primary"
-                >Buy Player</Button>
+                >Buy Team</Button>
             </Card.Footer>
         </Card>
     );

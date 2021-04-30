@@ -25,11 +25,15 @@ const PlayerCard = ({ playerId }) => {
         setPrice(e.target.value);
     }
 
-    const handleClose = async () => {
-        console.log(playerId);
+    const handleSell = async () => {
         await sellPlayer(playerId, price);
         setShow(false);
     }
+
+    const handleClose = async () => {
+        setShow(false);
+    }
+
     const handleShow = () => setShow(true);
 
     const customStyles = {
@@ -62,7 +66,7 @@ const PlayerCard = ({ playerId }) => {
                     <Button variant="secondary" onClick={handleClose}>
                         Cancel
                     </Button>
-                    <Button variant="primary" onClick={handleClose}>
+                    <Button variant="primary" onClick={handleSell}>
                         Sell Player
                 </Button>
                 </Modal.Footer>

@@ -47,6 +47,7 @@ const MyTeam = ({ owner }) => {
                             title="Standard"
                             subtitle="per player"
                             isPromoted={false}
+                            boxType={1}
                             chances={[80, 15, 4, 1]}
                         />
                     </Col>
@@ -56,6 +57,7 @@ const MyTeam = ({ owner }) => {
                             title="Rare"
                             subtitle="per player"
                             isPromoted={true}
+                            boxType={2}
                             chances={[20, 60, 15, 5]}
                         />
                     </Col>
@@ -65,6 +67,7 @@ const MyTeam = ({ owner }) => {
                             title="Mythical"
                             subtitle="per player"
                             isPromoted={false}
+                            boxType={3}
                             chances={[5, 25, 45, 25]}
                         />
                     </Col>
