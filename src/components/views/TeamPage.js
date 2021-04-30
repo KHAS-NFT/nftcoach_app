@@ -34,7 +34,12 @@ const Home = () => {
         <Container>
             <Row className="no-gutters ts-cards-same-height mt-5">
                 <Col className="offset-sm-4" sm={4} lg={4}>
-                    <PriceCard price="1 AVAX" chances={[80, 15, 4, 1]} />
+                    <PriceCard
+                        price="1 AVAX"
+                        title="Starter Pack"
+                        subtitle="Pre-launch price for 5 standard players"
+                        chances={[80, 15, 4, 1]}
+                        isPromoted={true} />
                 </Col>
             </Row>
         </Container>

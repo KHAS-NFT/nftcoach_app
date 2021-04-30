@@ -4,23 +4,32 @@ import Card from "react-bootstrap/Card";
 import BuyStarterPack from "../contract/BuyStarterPack";
 
 
-const PriceCard = ({ price, chances }) => {
+const PriceCard = ({ title, subtitle, price, chances, isPromoted }) => {
+
+    const primColor = isPromoted ? "#346de0" : "#f46a20";
+
+    const cardClass = isPromoted ?
+        "text-center ts-price-box ts-price-box__promoted" :
+        "text-center ts-price-box"
+
     return (
-        <Card className="text-center ts-price-box ts-price-box__promoted">
+        <Card className={cardClass}>
             <Card.Header className="p-0">
-                <h5 style={{ backgroundColor: "#f46a20" }}
-                    className="mb-0 py-3 text-white">Starter Pack</h5>
+                <h5 style={{ backgroundColor: primColor }}
+                    className="mb-0 py-3 text-white">{title}</h5>
                 <div className="ts-title py-5 mb-0">
                     <h3 className="mb-0 font-weight-normal">
                         {price}
                     </h3>
-                    <small className="ts-opacity__50">Pre-Launch Price for 5 standart player</small>
+                    <small className="ts-opacity__50">{subtitle}</small>
                 </div>
             </Card.Header>
 
             <small className="ts-opacity__50">
-                <br />Players will be created based on below percentages.<br />
+                <div className="mx-2">
+                    <br />Players will be created based on below percentages.<br />
             If you are lucky enough you will have a Legendary player<br /><br />
+                </div>
             </small>
             <Card.Body className="p-0">
                 <ul className="list-unstyled ts-list-divided">
