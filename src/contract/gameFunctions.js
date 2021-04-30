@@ -9,3 +9,12 @@ export const getTeamId = async () => {
         return "";
     }
 }
+
+export const getPlayers = async (owner) => {
+    try {
+        return (await NftCoach.methods.getPlayers(owner).call());
+    } catch (err) {
+        console.error(err);
+        return [];
+    }
+}

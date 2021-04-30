@@ -8,10 +8,11 @@ import PriceCard from "../PriceCard";
 import { GameContext } from "../../context/GameContext";
 
 import { getTeamId } from "../../contract/gameFunctions";
+import MyTeam from "./MyTeam";
 
 const Home = () => {
 
-    const [, , teamId, setTeamId] = useContext(GameContext);
+    const [account, , teamId, setTeamId] = useContext(GameContext);
 
     useEffect(() => {
         async function getData() {
@@ -21,10 +22,12 @@ const Home = () => {
         getData();
     }, []);
 
-    if (teamId === "") {
-        console.log("Have no team");
-    } else {
-        console.log("Have team");
+    if (account === "") {
+        return (
+            <Container>
+                <h1 className="text-center">Please connect your account to continue</h1>
+            </Container>
+        );
     }
 
     return teamId === "" ? (
@@ -36,9 +39,7 @@ const Home = () => {
             </Row>
         </Container>
     ) :
-        <Container>
-            <Row>You have a team</Row>
-        </Container>
+        <MyTeam owner={account} />
         ;
 }
 

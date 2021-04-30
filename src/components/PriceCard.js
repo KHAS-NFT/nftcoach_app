@@ -7,10 +7,10 @@ import BuyStarterPack from "../contract/BuyStarterPack";
 const PriceCard = ({ price, chances }) => {
     return (
         <Card className="text-center ts-price-box ts-price-box__promoted">
-            <Card.Header style={{ backgroundColor: "#346de0" }} className="p-0">
+            <Card.Header className="p-0">
                 <h5 style={{ backgroundColor: "#f46a20" }}
                     className="mb-0 py-3 text-white">Starter Pack</h5>
-                <div className="ts-title text-white py-5 mb-0">
+                <div className="ts-title py-5 mb-0">
                     <h3 className="mb-0 font-weight-normal">
                         {price}
                     </h3>
