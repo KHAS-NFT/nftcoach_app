@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import MarketCard from "../MarketCard";
 
+import { GameContext } from "../../context/GameContext";
+
 const Marketplace = () => {
 
+    const [account, , ,] = useContext(GameContext);
     const [players, setPlayers] = useState([]);
 
     useEffect(() => {
@@ -17,11 +20,19 @@ const Marketplace = () => {
         getListings();
     }, []);
 
+    if (account === "") {
+        return (
+            <Container className="mt-5">
+                <h1 className="text-center">Please connect your account to continue</h1>
+            </Container>
+        );
+    }
+
     return (
         <Container>
             <div className="ts-title"></div>
             <div className="ts-title">
-                <h2>Players for SALE</h2>
+                <h2>Players for Sale</h2>
             </div>
             <Row>
                 {players.map(playerId =>

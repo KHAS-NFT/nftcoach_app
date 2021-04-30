@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { web3, connectWallet } from "./web3";
 import Button from "react-bootstrap/Button";
-import Nav from "react-bootstrap/Nav"
 
 import { GameContext } from "../context/GameContext";
 

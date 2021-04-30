@@ -24,11 +24,13 @@ const Home = () => {
 
     if (account === "") {
         return (
-            <Container>
+            <Container className="mt-5">
                 <h1 className="text-center">Please connect your account to continue</h1>
             </Container>
         );
     }
+
+    console.log(teamId);
 
     return teamId === "" ? (
         <Container>
@@ -44,8 +46,7 @@ const Home = () => {
             </Row>
         </Container>
     ) :
-        <MyTeam owner={account} />
-        ;
+        <MyTeam owner={account} />;
 }
 
 export default Home;

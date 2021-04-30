@@ -15,7 +15,7 @@ function App() {
       <AppNavbar />
       <Switch>
         <Route path="/" exact component={TeamPage} />
-        <Route path="/marketplace" exact component={Marketplace} />
+        <Route path="/marketplace" component={Marketplace} />
 
 
         <Route path="/nftcoach_app" exact component={TeamPage} />
