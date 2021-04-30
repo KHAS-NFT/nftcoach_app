@@ -3,11 +3,11 @@ import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
-import Button from "react-bootstrap/Button";
 
 import Logo from "../assets/img/logo-240.png";
+import ConnectMetamask from "../contract/ConnectMetamask";
 
-const Component = () => {
+const AppNavbar = () => {
 
     const navbarStyle = {
         backgroundColor: "#000",
@@ -30,13 +30,7 @@ const Component = () => {
                         <Nav.Link className="text-white">Challenge</Nav.Link>
                         <Nav.Link className="text-white">Marketplace</Nav.Link>
                         <Nav.Link className="text-white"></Nav.Link>
-                        <Button
-                            className="m-1 px-3"
-                            variant="primary"
-                            size="sm"
-                        >
-                            Connect Your METAMASK Wallet
-                        </Button>
+                        <ConnectMetamask />
                     </Nav>
                 </Navbar.Collapse>
             </Container>
@@ -44,4 +38,4 @@ const Component = () => {
     );
 }
 
-export default Component;
+export default AppNavbar;

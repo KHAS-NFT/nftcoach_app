@@ -1,7 +1,8 @@
 import React from "react";
 
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
+import BuyStarterPack from "../contract/BuyStarterPack";
+
 
 const PriceCard = ({ price, chances }) => {
     return (
@@ -31,7 +32,7 @@ const PriceCard = ({ price, chances }) => {
             </Card.Body>
 
             <Card.Footer className="bg-transparent ts-border-none">
-                <Button variant="primary">Buy Team</Button>
+                <BuyStarterPack />
             </Card.Footer>
         </Card>
     );
