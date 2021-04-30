@@ -13,6 +13,7 @@ function App() {
       <AppNavbar />
       <Switch>
         <Route path="/" exact component={TeamPage} />
+        <Route path="/nftcoach_app" exact component={TeamPage} />
       </Switch>
     </Router>
   );
