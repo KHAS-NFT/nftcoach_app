@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/nftcoach_app/static/css/main.55ed8a0f.chunk.css",
-    "main.js": "/nftcoach_app/static/js/main.cd4fed4b.chunk.js",
-    "main.js.map": "/nftcoach_app/static/js/main.cd4fed4b.chunk.js.map",
-    "runtime-main.js": "/nftcoach_app/static/js/runtime-main.b7c85b57.js",
-    "runtime-main.js.map": "/nftcoach_app/static/js/runtime-main.b7c85b57.js.map",
-    "static/css/2.4c97ca4f.chunk.css": "/nftcoach_app/static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.74f08a60.chunk.js": "/nftcoach_app/static/js/2.74f08a60.chunk.js",
-    "static/js/2.74f08a60.chunk.js.map": "/nftcoach_app/static/js/2.74f08a60.chunk.js.map",
-    "static/js/3.36068b84.chunk.js": "/nftcoach_app/static/js/3.36068b84.chunk.js",
-    "static/js/3.36068b84.chunk.js.map": "/nftcoach_app/static/js/3.36068b84.chunk.js.map",
-    "index.html": "/nftcoach_app/index.html",
-    "static/css/2.4c97ca4f.chunk.css.map": "/nftcoach_app/static/css/2.4c97ca4f.chunk.css.map",
-    "static/css/main.55ed8a0f.chunk.css.map": "/nftcoach_app/static/css/main.55ed8a0f.chunk.css.map",
-    "static/js/2.74f08a60.chunk.js.LICENSE.txt": "/nftcoach_app/static/js/2.74f08a60.chunk.js.LICENSE.txt",
-    "static/media/style.css": "/nftcoach_app/static/media/loading.582bc01d.svg",
-    "static/media/logo-240.0126f060.png": "/nftcoach_app/static/media/logo-240.0126f060.png",
-    "static/media/ulas.f1e7db74.jpg": "/nftcoach_app/static/media/ulas.f1e7db74.jpg"
+    "main.css": "/static/css/main.c0d2db76.chunk.css",
+    "main.js": "/static/js/main.cd4fed4b.chunk.js",
+    "main.js.map": "/static/js/main.cd4fed4b.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.82dc544b.js",
+    "runtime-main.js.map": "/static/js/runtime-main.82dc544b.js.map",
+    "static/css/2.4c97ca4f.chunk.css": "/static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.47f7cb4f.chunk.js": "/static/js/2.47f7cb4f.chunk.js",
+    "static/js/2.47f7cb4f.chunk.js.map": "/static/js/2.47f7cb4f.chunk.js.map",
+    "static/js/3.36068b84.chunk.js": "/static/js/3.36068b84.chunk.js",
+    "static/js/3.36068b84.chunk.js.map": "/static/js/3.36068b84.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.4c97ca4f.chunk.css.map": "/static/css/2.4c97ca4f.chunk.css.map",
+    "static/css/main.c0d2db76.chunk.css.map": "/static/css/main.c0d2db76.chunk.css.map",
+    "static/js/2.47f7cb4f.chunk.js.LICENSE.txt": "/static/js/2.47f7cb4f.chunk.js.LICENSE.txt",
+    "static/media/style.css": "/static/media/loading.582bc01d.svg",
+    "static/media/logo-240.0126f060.png": "/static/media/logo-240.0126f060.png",
+    "static/media/ulas.f1e7db74.jpg": "/static/media/ulas.f1e7db74.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.b7c85b57.js",
+    "static/js/runtime-main.82dc544b.js",
     "static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.74f08a60.chunk.js",
-    "static/css/main.55ed8a0f.chunk.css",
+    "static/js/2.47f7cb4f.chunk.js",
+    "static/css/main.c0d2db76.chunk.css",
     "static/js/main.cd4fed4b.chunk.js"
   ]
 }
