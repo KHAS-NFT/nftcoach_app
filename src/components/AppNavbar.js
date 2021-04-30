@@ -24,9 +24,7 @@ const AppNavbar = () => {
 
                 <Navbar.Collapse id="navbarNavAltMarkup">
                     <Nav className="ml-auto text-white">
-                        <Nav.Link className="text-white">Home</Nav.Link>
                         <Nav.Link className="text-white">My Team</Nav.Link>
-                        <Nav.Link className="text-white">Buy Player</Nav.Link>
                         <Nav.Link className="text-white">Challenge</Nav.Link>
                         <Nav.Link className="text-white">Marketplace</Nav.Link>
                         <Nav.Link className="text-white"></Nav.Link>

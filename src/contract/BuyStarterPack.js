@@ -10,8 +10,7 @@ const BuyStarterPack = () => {
 
     const [account,] = useContext(GameContext);
 
-    const buyPlayer = async () => {
-
+    const buyPack = async () => {
         try {
             await NftCoach.methods.getStarterPack().send({
                 from: account,
@@ -25,7 +24,7 @@ const BuyStarterPack = () => {
 
     return (
         <Button
-            onClick={buyPlayer}
+            onClick={buyPack}
             variant="primary"
         >Buy Team</Button>
     );
