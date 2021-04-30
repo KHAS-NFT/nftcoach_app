@@ -1,39 +1,21 @@
-import React, { Component } from "react";
+import React from "react";
 import "./App.css";
+import "./assets/css/style.css";
 
-// Basic Web3 - Metamask integration || Can be improved
-import web3 from "./web3";
-// Contract instances
-import nftcoach from "./contract_nftcoach";
-import marketplace from "./contract_marketplace";
-import playernft from "./contract_playernft";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-class App extends Component {
-  state = {
-    owner: "Please, connect to the Rinkeby Network!",
-  };
+import AppNavbar from "./components/AppNavbar";
+import Home from "./components/views/Home";
 
-  async componentDidMount() {
-    const accounts = await web3.eth.getAccounts();
-    const ow = await nftcoach.methods.owner().call();
-
-    this.setState({ owner: ow });
-  }
-
-  render() {
-    return (
-      <div>
-        <h1>NFTCOACH</h1>
-        <p>{this.state.owner}</p>
-      </div>
-    );
-  }
+function App() {
+  return (
+    <Router>
+      <AppNavbar />
+      <Switch>
+        <Route path="/" exact component={Home} />
+      </Switch>
+    </Router>
+  );
 }
-
-// function App() {
-//   return (
-//     <h1>NFTCOACH</h1>
-//   );
-// }
 
 export default App;
