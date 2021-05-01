@@ -11,8 +11,8 @@ const WinChallenge = () => {
 
     const winStyle = {
         backgroundImage: `url(${BG})`,
-        backgroundColor: "#AB0000",
-        opacity: ".3",
+        backgroundColor: "00ab00",
+        opacity: ".8",
         height: "500px",
         marginBottom: "-3em"
     }
