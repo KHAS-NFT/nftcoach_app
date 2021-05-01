@@ -5,9 +5,12 @@ import Marketplace from "./contractMarketplace";
 
 export const getTeamId = async () => {
     try {
-        return (await NftCoach.methods.getMyTeam().call());
+        const accounts = await web3.eth.getAccounts();
+        return (await NftCoach.methods.getMyTeam().call({
+            from: accounts[0]
+        }));
     } catch (err) {
-        return "";
+        return "0";
     }
 }
 
@@ -72,7 +75,9 @@ export const createPlayer = async (box) => {
             from: accounts[0],
             value: web3.utils.toWei(`${1 * box}`, "ether")
         });
-        return true;
+        return (await NftCoach.methods.getMyTeam().call({
+            from: accounts[0]
+        }));
     } catch (err) {
         console.error(err.message);
         return false;
@@ -115,5 +120,20 @@ export const buyPlayer = async (playerId) => {
     } catch (err) {
         console.error(err.message);
         return false;
+    }
+}
+
+export const makeChallenge = async (oppId, starterFive) => {
+    try {
+        const accounts = await web3.eth.getAccounts();
+        const result = await NftCoach.methods.makeChallenge(oppId, starterFive).send({
+            from: accounts[0]
+        });
+        if (result !== undefined) {
+            console.log(result ? "Won the Challenge" : "Lost the Challenge");
+        }
+        return result;
+    } catch (err) {
+        console.error(err.message);
     }
 }

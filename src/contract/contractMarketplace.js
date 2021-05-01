@@ -1,6 +1,6 @@
 import { web3 } from "./web3";
 
-const address = "0xF17Ca6691309ecc07F63E1160414Ef1a162B52b5";
+const address = "0xC415D38582edF6Bf1D9199Ea12e1d71eF2bCE846"; //FUJI
 
 const abi = [
   {
