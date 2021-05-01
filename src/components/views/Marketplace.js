@@ -6,12 +6,12 @@ import MarketCard from "../MarketCard";
 
 import { GameContext } from "../../context/GameContext";
 
-import { getListings, getPlayerDetails, fmtPrice } from "../../contract/gameFunctions";
+import { getListings, getPlayerDetails } from "../../contract/gameFunctions";
 
 const Marketplace = () => {
 
     const [account, , ,] = useContext(GameContext);
-    const [players, setPlayers] = useState([]);
+    const [, setPlayers] = useState([]);
     const [playerDetails, setPlayerDetails] = useState([]);
 
     useEffect(() => {

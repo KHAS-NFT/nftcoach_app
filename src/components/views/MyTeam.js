@@ -34,6 +34,9 @@ const MyTeam = ({ owner }) => {
                 </Row>
             </Container>
 
+            <br />
+            <br />
+
             <Container style={{ backgroundColor: "#f7f7f7" }} className="py-3 mt-3" >
 
                 <div class="ts-title text-center">

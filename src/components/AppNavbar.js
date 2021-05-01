@@ -22,7 +22,7 @@ const AppNavbar = () => {
                     <img src={Logo} alt="NFT Coach Basketball Manager" />
                 </Navbar.Brand>
 
-                <Navbar.Toggle aria-controls="navbarNavAltMarkup" />
+                <Navbar.Toggle aria-controls="navbarNavAltMarkup" className="text-white bg-white" />
 
                 <Navbar.Collapse id="navbarNavAltMarkup">
                     <Nav className="ml-auto text-white">

@@ -1,14 +1,22 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
+import { ChallengeContext } from "../context/ChallengeContext";
+
 import { generateFromString } from "generate-avatar";
 
 const TeamCard = ({ teamId }) => {
 
-    const [teamSelected, setTeamSelected] = useState(false);
+    const [selectedTeamId, setSelectedTeamId] = useContext(ChallengeContext);
+
+    const handleSelect = () => {
+        setSelectedTeamId(teamId);
+    }
+
+    const selected = selectedTeamId === teamId;
 
     return (
         <Col sm={6} lg={3}>
@@ -24,7 +32,7 @@ const TeamCard = ({ teamId }) => {
                 </Card.Body>
                 <Card.Footer className="bg-white">
                     <div className="bg-transparent ts-border-none">
-                        <Button variant="primary">Select Opponent</Button>
+                        <Button variant={selected ? "secondary" : "primary"} onClick={handleSelect}>{selected ? "Selected" : "Select Opponent"}</Button>
                     </div>
                 </Card.Footer>
             </Card>

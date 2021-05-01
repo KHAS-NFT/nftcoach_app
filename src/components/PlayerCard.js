@@ -7,7 +7,6 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import InputGroup from "react-bootstrap/InputGroup";
-import From from "react-bootstrap/Form";
 import Form from "react-bootstrap/Form";
 
 import ReactModal from "react-modal";
@@ -84,7 +83,7 @@ const PlayerCard = ({ playerId }) => {
 
                 <Card.Body>
                     <h5 className="mb-1">
-                        Player #{playerId}
+                        Player <small>#{playerId}</small>
                     </h5>
                 </Card.Body>
                 <Card.Footer className="bg-white">

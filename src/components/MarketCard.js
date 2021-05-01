@@ -1,17 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 
 import PlayerAvatar from "./PlayerAvatar";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 
-import { fmtPrice } from "../contract/gameFunctions";
+import { fmtPrice, buyPlayer } from "../contract/gameFunctions";
 
 // TODO: Implement buy player, with modal
 
 const MarketCard = ({ playerId, rate, level, price }) => {
 
+    const [show, setShow] = useState(false);
     const priceFormatted = fmtPrice(price);
+
+    const handleClose = () => setShow(false);
+    const handleOpen = () => setShow(true);
+    const callBuy = async () => await buyPlayer(playerId);
+
+    const AcceptModal = () => {
+        return (
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Confirm to Buy</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Do you confirm buying this player for {priceFormatted} AVAX?</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="danger" onClick={handleClose}>
+                        Cancel
+                </Button>
+                    <Button variant="success" onClick={callBuy}>
+                        Buy
+                </Button>
+                </Modal.Footer>
+            </Modal>
+        );
+    }
 
     return (
         <Col sm={6} lg={3}>
@@ -32,10 +57,11 @@ const MarketCard = ({ playerId, rate, level, price }) => {
                 </Card.Body>
                 <Card.Footer className="bg-white">
                     <div className="bg-transparent ts-border-none">
-                        <Button variant="primary">Buy Player</Button>
+                        <Button onClick={handleOpen} variant="primary">Buy Player</Button>
                     </div>
                 </Card.Footer>
             </Card>
+            <AcceptModal />
         </Col>
     );
 }
