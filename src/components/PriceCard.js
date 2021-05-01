@@ -3,7 +3,7 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
-import { buyPlayer } from "../contract/gameFunctions";
+import { createPlayer } from "../contract/gameFunctions";
 
 const PriceCard = ({ title, subtitle, boxType, price, chances, isPromoted }) => {
 
@@ -43,7 +43,7 @@ const PriceCard = ({ title, subtitle, boxType, price, chances, isPromoted }) => 
 
             <Card.Footer className="bg-transparent ts-border-none">
                 <Button
-                    onClick={() => buyPlayer(boxType)}
+                    onClick={() => createPlayer(boxType)}
                     variant="primary"
                 >Buy Player</Button>
             </Card.Footer>

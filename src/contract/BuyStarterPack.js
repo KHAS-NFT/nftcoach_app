@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+/* import React, { useContext } from "react";
 
 import { web3 } from "./web3";
 import Button from "react-bootstrap/Button";
@@ -30,4 +30,4 @@ const BuyStarterPack = () => {
     );
 }
 
-export default BuyStarterPack;
+export default BuyStarterPack; */

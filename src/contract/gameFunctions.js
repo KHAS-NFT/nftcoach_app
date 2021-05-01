@@ -65,7 +65,7 @@ export const buyPack = async () => {
     }
 }
 
-export const buyPlayer = async (box) => {
+export const createPlayer = async (box) => {
     try {
         const accounts = await web3.eth.getAccounts();
         await NftCoach.methods.createPlayer(box).send({
@@ -100,5 +100,20 @@ export const getAllTeams = async () => {
     } catch (err) {
         console.error(err.message);
         return [];
+    }
+}
+
+export const buyPlayer = async (playerId) => {
+    try {
+        const accounts = await web3.eth.getAccounts();
+        const player = await NftCoach.methods.playerIdToPlayer(playerId).call();
+        await Marketplace.methods.buyPlayer(playerId).send({
+            from: accounts[0],
+            value: player.price
+        });
+        return true;
+    } catch (err) {
+        console.error(err.message);
+        return false;
     }
 }
