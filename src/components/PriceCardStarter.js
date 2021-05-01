@@ -5,7 +5,12 @@ import Button from "react-bootstrap/Button";
 
 import { buyPack } from "../contract/gameFunctions";
 
-const PriceCard = ({ title, subtitle, price, chances, isPromoted }) => {
+const PriceCard = ({ title, subtitle, price, chances, isPromoted, update }) => {
+
+    const handleBuy = async () => {
+        const teamId = await buyPack();
+        update(teamId);
+    }
 
     const primColor = isPromoted ? "#346de0" : "#f46a20";
 
@@ -43,7 +48,7 @@ const PriceCard = ({ title, subtitle, price, chances, isPromoted }) => {
 
             <Card.Footer className="bg-transparent ts-border-none">
                 <Button
-                    onClick={buyPack}
+                    onClick={handleBuy}
                     variant="primary"
                 >Buy Team</Button>
             </Card.Footer>

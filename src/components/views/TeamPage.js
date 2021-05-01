@@ -8,7 +8,7 @@ import PriceCardStarter from "../PriceCardStarter";
 
 import { GameContext } from "../../context/GameContext";
 
-import { getTeamId } from "../../contract/gameFunctions";
+import { getTeamId, } from "../../contract/gameFunctions";
 import MyTeam from "./MyTeam";
 
 const Home = () => {
@@ -23,7 +23,9 @@ const Home = () => {
         getData();
     }, []);
 
-    if (account === "") {
+    const updateUp = (team) => { setTeamId(team); }
+
+    if (account === "" || account === undefined) {
         return (
             <Container className="mt-5">
                 <h1 className="text-center">Please connect your account to continue</h1>
@@ -31,11 +33,8 @@ const Home = () => {
         );
     }
 
-    // TODO: Get Starter Pack sometimes doesn't appear
 
-    console.log(teamId);
-
-    return teamId === "" ? (
+    return teamId === "0" ? (
         <Container>
             <Row className="no-gutters ts-cards-same-height mt-5">
                 <Col className="offset-sm-4" sm={4} lg={4}>
@@ -44,6 +43,7 @@ const Home = () => {
                         title="Starter Pack"
                         subtitle="Pre-launch price for 5 standard players"
                         chances={[80, 15, 4, 1]}
+                        update={updateUp}
                         isPromoted={true} />
                 </Col>
             </Row>

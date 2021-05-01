@@ -10,7 +10,7 @@ export const getTeamId = async () => {
             from: accounts[0]
         }));
     } catch (err) {
-        return "";
+        return "0";
     }
 }
 
@@ -75,7 +75,9 @@ export const createPlayer = async (box) => {
             from: accounts[0],
             value: web3.utils.toWei(`${1 * box}`, "ether")
         });
-        return true;
+        return (await NftCoach.methods.getMyTeam().call({
+            from: accounts[0]
+        }));
     } catch (err) {
         console.error(err.message);
         return false;

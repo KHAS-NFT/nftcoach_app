@@ -39,7 +39,7 @@ const ConnectMetamask = () => {
         setAccount(accounts[0]);
     }
 
-    return account !== ""
+    return (account !== "" && account !== undefined)
         ? <Button
             className="m-1 px-3"
             variant="primary"
