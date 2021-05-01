@@ -2,18 +2,18 @@
 
 [Game details and the demo is achievable on here!](https://nftcoach.io "NFTCOACH DEMO")
 
-======
+***
 
-[Smart Contracts](https://github.com/KHAS-NFT/nftcoach_contracts "NFTCOACH SMART CONTRACTS")
+[Smart Contracts](https://github.com/KHAS-NFT/nftcoach_contracts "NFTCOACH SMART CONTRACTS") ⋅⋅
 [Game Web App](https://github.com/KHAS-NFT/nftcoach_app "NFTCOACH SMART CONTRACTS")
 
-======
+***
 
 ### How to deploy the contracts?
 
---\* It is a React App and the run function of the app is explained on the below part by official React docs.
+⋅⋅*  It is a React App and the run function of the app is explained on the below part by official React docs.
 
-======
+***
 
 # Getting Started with Create React App
 
